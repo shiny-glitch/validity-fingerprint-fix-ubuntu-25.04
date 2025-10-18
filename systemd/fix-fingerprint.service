@@ -1,0 +1,14 @@
+[Unit]
+Description=Self-heal Validity fingerprint stack at boot
+After=systemd-udevd.service systemd-udev-settle.service dbus.service
+Wants=systemd-udevd.service systemd-udev-settle.service
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/udevadm settle
+ExecStartPre=/bin/sleep 5
+ExecStart=/usr/bin/env bash -lc '/usr/local/bin/fix-fingerprint.sh || true'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
