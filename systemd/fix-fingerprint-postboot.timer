@@ -1,0 +1,9 @@
+[Unit]
+Description=Run fingerprint self-heal shortly after boot
+
+[Timer]
+OnBootSec=20s
+Persistent=true
+
+[Install]
+WantedBy=timers.target
