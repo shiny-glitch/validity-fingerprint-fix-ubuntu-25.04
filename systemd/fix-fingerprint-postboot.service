@@ -1,0 +1,6 @@
+[Unit]
+Description=Post-boot fingerprint self-heal
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/env bash -lc '/usr/local/bin/fix-fingerprint.sh || true'
