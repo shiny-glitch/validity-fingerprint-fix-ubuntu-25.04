@@ -1,0 +1,2 @@
+# When a Validity fingerprint device (VID 138a) appears, ask systemd to run the fixer
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="138a", TAG+="systemd", ENV{SYSTEMD_WANTS}="fix-fingerprint.service"
