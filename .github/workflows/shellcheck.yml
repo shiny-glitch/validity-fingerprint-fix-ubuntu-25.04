@@ -1,0 +1,12 @@
+name: shellcheck
+on:
+  push: { branches: ["main"] }
+  pull_request:
+jobs:
+  sc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ludeeus/action-shellcheck@v2
+        with:
+          ignore: README.md
