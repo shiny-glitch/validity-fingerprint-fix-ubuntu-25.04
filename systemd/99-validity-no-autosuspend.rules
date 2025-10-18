@@ -1,0 +1,2 @@
+# Disable autosuspend for Validity Sensors (Vendor 138a)
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="138a", TEST=="power/control", ATTR{power/control}="on"
