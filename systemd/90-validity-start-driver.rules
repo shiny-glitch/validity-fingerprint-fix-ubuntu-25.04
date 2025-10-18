@@ -1,0 +1,2 @@
+# Also start the validity userspace driver as soon as the device is added
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="138a", TAG+="systemd", ENV{SYSTEMD_WANTS}="python3-validity.service"
